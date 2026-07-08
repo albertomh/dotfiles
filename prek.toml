@@ -1,0 +1,44 @@
+# See <https://prek.j178.dev>
+#:schema https://www.schemastore.org/prek.json
+
+[[repos]]
+repo = "builtin"
+hooks = [
+    { id = "trailing-whitespace" },
+    { id = "end-of-file-fixer" },
+    { id = "check-yaml" },
+    { id = "check-toml" },
+    { id = "check-merge-conflict" },
+    { id = "check-added-large-files" },
+    { id = "check-case-conflict" },
+    { id = "check-executables-have-shebangs" },
+    # chezmoi run_* templates have shebangs but aren't executable in source
+    { id = "check-shebang-scripts-are-executable", exclude = '\.tmpl$' },
+    { id = "detect-private-key" },
+]
+
+[[repos]]
+repo = "https://github.com/alessandrojcm/commitlint-pre-commit-hook"
+rev = "v9.26.0"
+hooks = [
+    { id = "commitlint", stages = [
+        "commit-msg",
+    ], additional_dependencies = [
+        "@commitlint/config-conventional",
+    ] },
+]
+
+[[repos]]
+repo = "https://github.com/DavidAnson/markdownlint-cli2"
+rev = "v0.23.0"
+hooks = [
+    { id = "markdownlint-cli2", args = [
+        "--config",
+        ".markdownlint-cli2.yaml",
+    ] },
+]
+
+[[repos]]
+repo = "https://github.com/shellcheck-py/shellcheck-py"
+rev = "v0.11.0.1"
+hooks = [{ id = "shellcheck" }]
