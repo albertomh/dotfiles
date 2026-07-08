@@ -1,0 +1,18 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# completions
+autoload -Uz compinit && compinit
+
+# history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt share_history hist_ignore_dups hist_ignore_space
+
+# tools
+eval "$(starship init zsh)"
+
+# aliases
+alias ls="eza"
+alias ll="eza -la --git"
+alias cat="bat"
