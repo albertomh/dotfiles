@@ -1,5 +1,6 @@
 # Files that live in the repo but should not be copied into $HOME
 .markdownlint-cli2.yaml
 bootstrap.sh
+Brewfile
 prek.toml
 README.md

@@ -18,6 +18,7 @@ This:
 1. installs `chezmoi`
 1. applies this repo:
     - creates dotfiles in `$HOME`
+    - runs `brew bundle` against the `Brewfile`
 
 Then authenticate (the only unavoidable manual step - secrets mustn't live in git):
 
@@ -35,6 +36,9 @@ chezmoi edit ~/.zshrc && chezmoi apply
 # bring a new file under management
 chezmoi add ~/.config/foo
 
+# edit Brewfile here; apply re-runs brew bundle
+chezmoi cd
+
 # pull + apply on another machine
 chezmoi update
 ```
@@ -42,5 +46,6 @@ chezmoi update
 ## Layout
 
 - `bootstrap.sh` — installs Homebrew & chezmoi, hands off to `chezmoi init --apply`
+- `Brewfile` — every package/app on the machine
 - `dot_*` — dotfiles (`dot_zshrc` generates `~/.zshrc`); `.tmpl` files get data from chezmoi config
-- `.chezmoi.toml.tmpl` — prompts for git identity once, stores it in `~/.config/chezmoi/`
+- `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes

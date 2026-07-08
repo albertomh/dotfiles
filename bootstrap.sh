@@ -18,7 +18,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # 2. chezmoi
 brew list chezmoi >/dev/null 2>&1 || brew install chezmoi
 
-# 3. Apply dotfiles.
+# 3. Apply dotfiles. This also runs `brew bundle` against the Brewfile
+#    (via run_onchange_brew-bundle.sh.tmpl) and the macOS defaults script.
 chezmoi init --apply "$DOTFILES_REPO"
 
 echo "Done. Open a new terminal, then authenticate:"
