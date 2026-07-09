@@ -17,6 +17,7 @@ brew "tree"
 brew "wget"
 brew "htop"
 brew "starship"    # prompt
+brew "zsh-history-substring-search"
 brew "shellcheck"
 
 # dev

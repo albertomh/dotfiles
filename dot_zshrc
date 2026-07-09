@@ -1,18 +1,40 @@
 # homebrew
+# ------------------------------------------------------------------------------
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+
 # completions
+# ------------------------------------------------------------------------------
+
 autoload -Uz compinit && compinit
 
+
 # history
+# ------------------------------------------------------------------------------
+
 HISTSIZE=100000
 SAVEHIST=100000
 setopt share_history hist_ignore_dups hist_ignore_space
 
+
 # tools
+# ------------------------------------------------------------------------------
+
 eval "$(starship init zsh)"
 
+
+# zsh plugins
+# ------------------------------------------------------------------------------
+
+# <https://github.com/zsh-users/zsh-history-substring-search>
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # aliases
+# ------------------------------------------------------------------------------
+
 alias ls="eza"
 alias ll="eza -la --git"
 alias cat="bat"
