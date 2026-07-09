@@ -23,6 +23,11 @@ setopt share_history hist_ignore_dups hist_ignore_space
 
 eval "$(starship init zsh)"
 
+export DOCKER_CLI_HINTS=false
+
+export EZA_ICONS_AUTO=always
+export EZA_COLORS="da=97"
+
 
 # zsh plugins
 # ------------------------------------------------------------------------------
@@ -31,6 +36,7 @@ eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
 
 # aliases
 # ------------------------------------------------------------------------------
