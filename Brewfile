@@ -1,6 +1,8 @@
 # Everything the machine should have. `chezmoi apply` re-runs `brew bundle`
 # whenever this file changes.
 
+# `brew list --casks --versions` to check installed versions
+
 # fonts
 cask "sf-symbols"
 cask "font-jetbrains-mono-nerd-font"
