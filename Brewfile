@@ -3,6 +3,9 @@
 
 # `brew list --casks --versions` to check installed versions
 
+# taps
+tap "domt4/autoupdate"
+
 # fonts
 cask "sf-symbols"
 cask "font-jetbrains-mono-nerd-font"

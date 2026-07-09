@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+mkdir -p "$HOME/Library/LaunchAgents"
+
+brew trust --command domt4/autoupdate/autoupdate
+brew autoupdate start 24h --upgrade --cleanup --immediate
