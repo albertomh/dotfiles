@@ -57,3 +57,24 @@ alias wip='g commit -n -m "wip"'
 
 alias ls="eza"
 alias ll="eza -la --git"
+
+
+# git helpers
+# ------------------------------------------------------------------------------
+
+_git_default_branch() {
+  git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null |
+    sed 's@^origin/@@' ||
+    echo main
+}
+
+gcm() {
+  git checkout "$(_git_default_branch)" "$@"
+}
+
+gf() {
+  local branch
+  branch="$(_git_default_branch)"
+  git fetch origin "$branch" --prune &&
+    git pull origin "$branch"
+}
