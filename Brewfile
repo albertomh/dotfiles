@@ -1,6 +1,10 @@
 # Everything the machine should have. `chezmoi apply` re-runs `brew bundle`
 # whenever this file changes.
 
+# fonts
+cask "sf-symbols"
+cask "font-jetbrains-mono-nerd-font"
+
 # core CLI
 brew "git"
 brew "git-delta"   # syntax-highlighted diffs
