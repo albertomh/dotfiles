@@ -33,15 +33,12 @@ ssh-keygen -t ed25519 -C "$(hostname)"
 
 ```sh
 # change a managed dotfile
-chezmoi edit ~/.zshrc && chezmoi apply
+chezmoi edit ~/.config/foo
 
-# bring a new file under management
-chezmoi add ~/.config/foo
+# preview changes
+chezmoi diff
 
-# edit Brewfile here; apply re-runs brew bundle
-chezmoi cd
-
-# pull + apply on another machine
+# pull + apply changes
 chezmoi update
 ```
 
