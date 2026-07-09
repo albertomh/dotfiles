@@ -82,3 +82,9 @@ gf() {
   git fetch origin "$branch" --prune &&
     git pull origin "$branch"
 }
+
+
+# init commands
+# ------------------------------------------------------------------------------
+
+eval "$(starship init zsh)"
