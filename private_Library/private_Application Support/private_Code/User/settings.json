@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Default High Contrast",
+    "editor.fontSize": 14,
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "update.mode": "start",
+    "update.showReleaseNotes": false,
+    "telemetry.telemetryLevel": "crash",
+    "terminal.integrated.initialHint": false,
+    "workbench.list.openMode": "doubleClick"
+}

@@ -50,3 +50,26 @@ chezmoi update
 - `dot_*` — dotfiles (`dot_zshrc` generates `~/.zshrc`); `.tmpl` files get data from chezmoi config
 - `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes
 - `.chezmoidata.yaml` — exposes variables as template data for dotfiles
+
+
+## Updating VS Code configuration
+
+VS Code user configuration is tracked in this repository.
+
+After making changes to VS Code settings, keybindings, or snippets locally, update the tracked files with:
+
+```bash
+# from anywhere
+chezmoi add ~/Library/Application\ Support/Code/User/settings.json
+chezmoi add ~/Library/Application\ Support/Code/User/keybindings.json
+chezmoi add ~/Library/Application\ Support/Code/User/snippets
+```
+
+Review the changes:
+
+```bash
+chezmoi cd
+git diff
+```
+
+Then commit and push the updated dotfiles.
