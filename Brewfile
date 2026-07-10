@@ -5,46 +5,47 @@
 
 # taps
 tap "domt4/autoupdate"
+tap "terraform-linters/tap"
 
 # fonts
-cask "sf-symbols"
 cask "font-jetbrains-mono-nerd-font"
+cask "sf-symbols"
 
 # core CLI
-brew "git"
-brew "git-delta"   # syntax-highlighted diffs
-brew "ripgrep"     # rg (fast grep)
 brew "bat"         # cat with syntax highlighting
 brew "eza"         # modern ls
+brew "git"
+brew "git-delta"   # syntax-highlighted diffs
+brew "htop"
 brew "jq"
-brew "yq"
+brew "ripgrep"     # rg (fast grep)
+brew "shellcheck"
+brew "starship"    # prompt
 brew "tree"
 brew "wget"
-brew "htop"
-brew "starship"    # prompt
+brew "yq"
 brew "zsh-history-substring-search"
-brew "shellcheck"
 
 # dev
 brew "chezmoi"
-brew "prek"        # pre-commit runner
 brew "docker"
 brew "docker-compose"
 brew "just"
+brew "opentofu"
+brew "prek"        # pre-commit runner
+brew "tokei"
+brew "trivy"
 brew "typst"
 brew "typstyle"
-brew "opentofu"
-brew "tflint"
-brew "trivy"
-brew "tokei"
+cask "terraform-linters/tap/tflint"
 
 # apps
-cask "ghostty"
 cask "1password"
+cask "blender"
 cask "firefox"
+cask "ghostty"
 cask "gimp"
 cask "google-chrome"
 cask "inkscape"
-cask "blender"
 cask "spotify"
 cask "visual-studio-code"
