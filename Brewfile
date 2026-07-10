@@ -30,6 +30,13 @@ brew "chezmoi"
 brew "prek"        # pre-commit runner
 brew "docker"
 brew "docker-compose"
+brew "just"
+brew "typst"
+brew "typstyle"
+brew "opentofu"
+brew "tflint"
+brew "trivy"
+brew "tokei"
 
 # apps
 cask "ghostty"
