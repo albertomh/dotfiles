@@ -2,7 +2,7 @@
 
 # Borrowing heavily from <https://github.com/mathiasbynens/dotfiles/blob/main/.macos>
 
-# macOS system preferences. Runs once per machine (chezmoi tracks state).
+# macOS system preferences. Re-runs when this script changes (chezmoi tracks state).
 # To re-run after edits: chezmoi state delete-bucket --bucket=scriptState
 
 set -euo pipefail
@@ -43,7 +43,7 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClic
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40 || true
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -163,7 +163,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 ###############################################################################
 
 # Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
+sudo systemsetup -setrestartfreeze on || true
 
 # Sleep the display after 15 minutes
 sudo pmset -a displaysleep 15
@@ -231,6 +231,9 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
+
+# Safari settings are best-effort; macOS may block writes to the container domain.
+set +e
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
@@ -316,6 +319,8 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+
+set -e
 
 ###############################################################################
 # Mac App Store                                                               #
