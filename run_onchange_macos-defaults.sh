@@ -111,9 +111,8 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 sudo chflags nohidden /Volumes
 
 # Set Projects as the default location for new Finder windows
-# For other paths, use `PfLo` and `file:///full/path/here/`
 mkdir -p ~/Projects
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Projects/"
 
 ###############################################################################
