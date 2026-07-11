@@ -354,5 +354,5 @@ for app in "Activity Monitor" \
 	"Safari" \
 	"SystemUIServer" \
 	"Terminal"; do
-	killall "${app}" &> /dev/null
+	killall "${app}" 2>/dev/null || true
 done
