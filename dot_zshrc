@@ -47,13 +47,12 @@ alias d="docker"
 alias dps="docker ps"
 
 alias g="git"
-alias ga.="git add ."
 alias gc="git checkout"
 alias gd="git diff"
 alias glog="git log --oneline"
 alias gp='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gs="git status"
-alias wip='g commit -n -m "wip"'
+alias wip='git commit -n -m "wip"'
 
 alias ls="eza"
 alias ll="eza -la --git"
