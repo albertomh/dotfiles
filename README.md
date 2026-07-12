@@ -1,11 +1,12 @@
 # dotfiles
 
 Config-as-code for a Mac:
+
 - [Homebrew Bundle](https://docs.brew.sh/Brew-Bundle-and-Brewfile) for packages
 - [chezmoi](https://www.chezmoi.io) for dotfiles
 - a single bootstrap script as entrypoint
 
-## Fresh machine (or disaster recovery)
+## Set up a new machine (or disaster recovery)
 
 Run:
 
@@ -14,6 +15,7 @@ Run:
 ```
 
 This:
+
 1. installs the Xcode Command Line Tools & `Homebrew`
 1. installs `chezmoi`
 1. applies this repo:
@@ -50,7 +52,6 @@ chezmoi update
 - `dot_*` — dotfiles (`dot_zshrc` generates `~/.zshrc`); `.tmpl` files get data from chezmoi config
 - `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes
 - `.chezmoidata.yaml` — exposes variables as template data for dotfiles
-
 
 ## Updating VS Code configuration
 

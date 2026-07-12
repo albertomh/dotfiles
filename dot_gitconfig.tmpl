@@ -44,4 +44,3 @@
 [alias]
     # up = !"git fetch origin --prune && git pull origin --tags main && git pull origin main"%
     up = !"git fetch origin --prune && git remote set-head origin --auto >/dev/null && git pull origin \"$(git rev-parse --abbrev-ref origin/HEAD | sed 's@^origin/@@')\""%
-
