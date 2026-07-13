@@ -32,6 +32,7 @@ brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
 brew "colima"      # Docker Desktop alternative; provides daemon, container runtime
+brew "uv"
 brew "just"
 brew "opentofu"
 brew "prek"        # pre-commit runner
