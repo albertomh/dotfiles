@@ -14,8 +14,8 @@ cask "sf-symbols"
 # core CLI
 brew "bat"         # cat with syntax highlighting
 brew "eza"         # modern ls
-brew "git"
 brew "git-delta"   # syntax-highlighted diffs
+brew "git"
 brew "htop"
 brew "jq"
 brew "ripgrep"     # rg (fast grep)
@@ -28,11 +28,10 @@ brew "zsh-history-substring-search"
 
 # dev
 brew "chezmoi"
-brew "docker"
-brew "docker-compose"
-brew "docker-buildx"
 brew "colima"      # Docker Desktop alternative; provides daemon, container runtime
-brew "uv"
+brew "docker-buildx"
+brew "docker-compose"
+brew "docker"
 brew "just"
 brew "opentofu"
 brew "prek"        # pre-commit runner
@@ -40,11 +39,13 @@ brew "tokei"
 brew "trivy"
 brew "typst"
 brew "typstyle"
+brew "uv"
 cask "terraform-linters/tap/tflint"
 
 # apps
 cask "1password"
 cask "blender"
+cask "dbeaver-community"
 cask "firefox"
 cask "ghostty"
 cask "gimp"
