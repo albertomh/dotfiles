@@ -30,6 +30,7 @@ brew "zsh-history-substring-search"
 brew "chezmoi"
 brew "docker"
 brew "docker-compose"
+brew "docker-buildx"
 brew "colima"      # Docker Desktop alternative; provides daemon, container runtime
 brew "just"
 brew "opentofu"

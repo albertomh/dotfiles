@@ -1,5 +1,8 @@
 {
     "cliPluginsExtraDirs": [
         "/opt/homebrew/lib/docker/cli-plugins"
-    ]
+    ],
+    "features": {
+        "buildKit": "true"
+    }
 }
