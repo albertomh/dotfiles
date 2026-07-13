@@ -82,6 +82,11 @@ gf() {
     git pull origin "$branch"
 }
 
+# env vars
+# ------------------------------------------------------------------------------
+
+# Docker socket for Colima (brew-installed dockerd alternative)
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 
 # init commands
 # ------------------------------------------------------------------------------
