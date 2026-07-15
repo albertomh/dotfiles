@@ -11,7 +11,7 @@ Config-as-code for a Mac:
 Run:
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/albertomh/dotfiles/main/bootstrap.sh)"
+/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/albertomh/dotfiles/main/bootstrap.sh)"
 ```
 
 This:
@@ -57,7 +57,8 @@ chezmoi update
 
 VS Code user configuration is tracked in this repository.
 
-After making changes to VS Code settings, keybindings, or snippets locally, update the tracked files with:
+After making changes to VS Code settings, keybindings, or snippets locally,
+update the tracked files with:
 
 ```bash
 # from anywhere
