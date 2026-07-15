@@ -18,6 +18,7 @@ brew "git-delta"   # syntax-highlighted diffs
 brew "git"
 brew "htop"
 brew "jq"
+brew "neovim"
 brew "ripgrep"     # rg (fast grep)
 brew "shellcheck"
 brew "starship"    # prompt

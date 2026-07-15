@@ -218,7 +218,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
+defaults write com.apple.Terminal StringEncodings -array 4
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
@@ -227,6 +227,16 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 # Disable line marks
 defaults write com.apple.Terminal ShowLineMarks -int 0
+
+# Disable press-and-hold for better Neovim UX
+defaults write com.apple.Terminal ApplePressAndHoldEnabled -bool false
+
+###############################################################################
+# Ghostty                                                                   #
+###############################################################################
+
+# Disable press-and-hold for better Neovim UX
+defaults write com.mitchellh.ghostty ApplePressAndHoldEnabled -bool false
 
 ###############################################################################
 # Safari & WebKit                                                             #
