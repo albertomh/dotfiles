@@ -53,9 +53,11 @@ chezmoi update
 - `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes
 - `.chezmoidata.yaml` — exposes variables as template data for dotfiles
 
-## Updating VS Code configuration
+## VS Code config & extensions
 
 VS Code user configuration is tracked in this repository.
+
+### Updating VS Code configuration
 
 After making changes to VS Code settings, keybindings, or snippets locally,
 update the tracked files with:
@@ -75,3 +77,20 @@ git diff
 ```
 
 Then commit and push the updated dotfiles.
+
+### VS Code extensions list
+
+Generate/update an installation script that lists all VS Code extensions currently installed:
+
+```sh
+{
+    echo '#!/usr/bin/env bash'
+    code --list-extensions | sed 's/^/code --install-extension /'
+} > vscode_extensions.sh && chmod +x vscode_extensions.sh
+```
+
+Once VS Code has been installed on a fresh machine (specified in Brewfile), install extensions with:
+
+```sh
+/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/albertomh/dotfiles/main/vscode_extensions.sh)"
+```
