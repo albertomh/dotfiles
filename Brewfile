@@ -45,6 +45,7 @@ cask "terraform-linters/tap/tflint"
 
 # apps
 cask "1password"
+cask "betterdisplay"
 cask "blender"
 cask "dbeaver-community"
 cask "firefox"
