@@ -158,6 +158,9 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
 
+# Displays share a single Space (disable separate Spaces per monitor)
+defaults write com.apple.spaces "spans-displays" -bool true
+
 ###############################################################################
 # Energy saving                                                               #
 ###############################################################################
@@ -195,6 +198,9 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 # disable smart quotes/dashes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable 'two spaces' -> period substitution
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 ###############################################################################
 # Activity Monitor                                                            #
