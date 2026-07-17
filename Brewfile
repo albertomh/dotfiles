@@ -16,6 +16,7 @@ brew "bat"         # cat with syntax highlighting
 brew "eza"         # modern ls
 brew "git-delta"   # syntax-highlighted diffs
 brew "git"
+brew "git-delete-merged-branches"
 brew "htop"
 brew "jq"
 brew "ripgrep"     # rg (fast grep)

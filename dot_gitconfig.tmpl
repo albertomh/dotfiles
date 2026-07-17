@@ -59,8 +59,7 @@
     go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
     # Remove branches that have already been merged with main.
-    # a.k.a. ‘delete merged’
-    dm = "!git branch --merged | grep -v '^\\*' | xargs -r -n1 git branch -d"
+    dm = !git-delete-merged-branches --branch main
 
     # `git di $number` shows the diff between the state `$number` revisions ago and the current state.
     di = "!f() { \
