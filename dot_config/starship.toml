@@ -12,6 +12,7 @@ $directory\
 [](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
+${custom.git_stash}\
 [](fg:yellow bg:green)\
 $c\
 $rust\
@@ -87,6 +88,13 @@ format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 [git_status]
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+
+# show asterisk to denote git stashes exist as oh-my-zsh does
+[custom.git_stash]
+command = "git rev-parse --verify refs/stash >/dev/null 2>&1 && printf '*'"
+when = "git rev-parse --verify refs/stash >/dev/null 2>&1"
+shell = ["sh"]
+format = "[ $output](fg:crust bg:yellow)"
 
 [nodejs]
 symbol = ""
