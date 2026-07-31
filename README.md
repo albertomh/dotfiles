@@ -53,6 +53,14 @@ chezmoi update
 - `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes
 - `.chezmoidata.yaml` — exposes variables as template data for dotfiles
 
+## Docker
+
+Using [`colima`](https://github.com/abiosoft/colima) as a lightweight
+alternative to Docker Desktop.
+
+If a `docker.sock` error raised when trying to invoke `docker [compose]`:
+`brew services start colima`
+
 ## VS Code config & extensions
 
 VS Code user configuration is tracked in this repository.
