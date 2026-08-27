@@ -28,6 +28,9 @@ export DOCKER_CLI_HINTS=false
 export EZA_ICONS_AUTO=always
 export EZA_COLORS="da=97"
 
+# Docker socket for Colima (brew-installed dockerd alternative)
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+
 
 # zsh plugins
 # ------------------------------------------------------------------------------
@@ -82,13 +85,19 @@ gf() {
     git pull origin "$branch"
 }
 
-# env vars
+
+# nvm
 # ------------------------------------------------------------------------------
 
-# Docker socket for Colima (brew-installed dockerd alternative)
-export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+export NVM_DIR="$HOME/.nvm"
+source "$(brew --prefix nvm)/nvm.sh"
 
-# init commands
+
+# pnpm
 # ------------------------------------------------------------------------------
 
-eval "$(starship init zsh)"
+export PNPM_HOME="/Users/bertillo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
