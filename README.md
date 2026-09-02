@@ -64,6 +64,8 @@ If a `docker.sock` error raised when trying to invoke `docker [compose]`:
 ## VS Code config & extensions
 
 VS Code user configuration is tracked in this repository.
+On a fresh build, `bootstrap.sh` runs `chezmoi init --apply`, which writes
+the tracked settings to `~/Library/Application Support/Code/User/settings.json`.
 
 ### Updating VS Code configuration
 

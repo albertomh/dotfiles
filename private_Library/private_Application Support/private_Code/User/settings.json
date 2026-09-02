@@ -1,6 +1,7 @@
 {
     "workbench.colorTheme": "Default High Contrast",
     "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
     "update.mode": "start",
