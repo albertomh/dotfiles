@@ -60,6 +60,8 @@ alias wip='git commit -n -m "wip"'
 alias ls="eza"
 alias ll="eza -la --git"
 
+alias tf="tofu"
+
 # navigation aliases
 
 alias dotfiles="cd ~/Projects/dotfiles"
