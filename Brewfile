@@ -19,6 +19,7 @@ brew "git"
 brew "git-delete-merged-branches"
 brew "htop"
 brew "jq"
+brew "neovim"
 brew "ripgrep"     # rg (fast grep)
 brew "shellcheck"
 brew "starship"    # prompt
