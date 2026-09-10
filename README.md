@@ -53,6 +53,16 @@ chezmoi update
 - `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes
 - `.chezmoidata.yaml` — exposes variables as template data for dotfiles
 
+### Homebrew & GUI app (cask) updates
+
+`brew autoupdate` runs daily and upgrades formulae plus casks. Since Homebrew
+6.0.9 it also upgrades `auto_updates true` casks (VS Code, Chrome, Firefox...)
+and quits the app first, which kills open windows.
+
+`~/.config/homebrew/brew.env` sets `HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1`
+to turn that off. Those apps update themselves; VS Code does so on relaunch
+(`update.mode: start`). Force them via `brew upgrade --greedy` if needed.
+
 ## Docker
 
 Using [`colima`](https://github.com/abiosoft/colima) as a lightweight
