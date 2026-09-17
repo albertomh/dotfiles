@@ -49,6 +49,7 @@ chezmoi update
 - `run_once_macos-defaults.sh` — system preferences, once per machine
 - `bootstrap.sh` — installs Homebrew & chezmoi, hands off to `chezmoi init --apply`
 - `Brewfile` — every package/app on the machine
+- `app_extensions/` — installation scripts for tracked application extensions
 - `dot_*` — dotfiles (`dot_zshrc` generates `~/.zshrc`); `.tmpl` files get data from chezmoi config
 - `run_onchange_brew-bundle.sh.tmpl` — re-runs `brew bundle` when the Brewfile changes
 - `.chezmoidata.yaml` — exposes variables as template data for dotfiles
@@ -106,11 +107,36 @@ Generate/update an installation script that lists all VS Code extensions current
 {
     echo '#!/usr/bin/env bash'
     code --list-extensions | sed 's/^/code --install-extension /'
-} > vscode_extensions.sh && chmod +x vscode_extensions.sh
+} > app_extensions/vscode_extensions.sh && chmod +x app_extensions/vscode_extensions.sh
 ```
 
 Once VS Code has been installed on a fresh machine (specified in Brewfile), install extensions with:
 
 ```sh
-/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/albertomh/dotfiles/main/vscode_extensions.sh)"
+/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/albertomh/dotfiles/main/app_extensions/vscode_extensions.sh)"
 ```
+
+## Blender extensions
+
+### Blender extensions list
+
+Generate/update an installation script that lists all Blender extensions currently installed:
+
+```sh
+blender --command extension list
+```
+
+Use the package IDs marked `installed`, `outdated`, or `orphan` to update the
+`extensions` array in `app_extensions/blender_extensions.sh`. The command also
+displays extensions available from enabled repositories, so entries without
+one of those markers are not installed locally.
+
+Once Blender has been installed by Homebrew, install and enable the tracked
+extensions with:
+
+```sh
+/usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/albertomh/dotfiles/main/app_extensions/blender_extensions.sh)"
+```
+
+Set `BLENDER_BIN` to use a Blender executable that is not available as
+`blender` on `PATH`.
