@@ -60,6 +60,9 @@
     # Switch to a branch, creating it if necessary.
     go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
+    # Copy name of current branch to clipboard.
+    cb = "!printf %s \"$(git branch --show-current)\" | pbcopy"
+
     # Remove branches that have already been merged with main.
     dm = !git-delete-merged-branches --branch main
 
