@@ -9,5 +9,6 @@
     "telemetry.telemetryLevel": "crash",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.initialHint": false,
+    "workbench.editor.tabActionCloseVisibility": false,
     "workbench.list.openMode": "doubleClick"
 }
