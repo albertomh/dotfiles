@@ -1,14 +1,18 @@
 {
-    "workbench.colorTheme": "Default High Contrast",
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml",
+        "editor.formatOnSave": false
+    },
     "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 14,
-    "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
-    "update.mode": "start",
-    "update.showReleaseNotes": false,
+    "files.autoSave": "afterDelay",
     "telemetry.telemetryLevel": "crash",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.initialHint": false,
+    "update.mode": "start",
+    "update.showReleaseNotes": false,
+    "workbench.colorTheme": "Default High Contrast",
     "workbench.editor.tabActionCloseVisibility": false,
     "workbench.list.openMode": "doubleClick"
 }
