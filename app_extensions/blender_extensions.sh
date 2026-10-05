@@ -7,6 +7,7 @@ extensions=(
     bool_tool
     measureit
     print3d_toolbox
+    looptools
 )
 
 if ! command -v "$blender_bin" >/dev/null 2>&1; then
