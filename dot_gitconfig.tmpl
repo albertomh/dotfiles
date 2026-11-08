@@ -63,8 +63,11 @@
     # Copy name of current branch to clipboard.
     cb = "!printf %s \"$(git branch --show-current)\" | pbcopy"
 
-    # Remove branches that have already been merged with main.
-    dm = !git-delete-merged-branches --branch main
+    # Remove branches that have already been merged into the default branch.
+    stale = !git-delete-merged-branches --branch "$(git symbolic-ref --short refs/remotes/origin/HEAD | cut -d/ -f2-)"
+
+    # `git dm` shows changes in current branch against remote's default branch
+    dm = diff origin/HEAD...HEAD
 
     # `git di $number` shows the diff between the state `$number` revisions ago and the current state.
     di = "!f() { \
