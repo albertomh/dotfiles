@@ -2,5 +2,56 @@
   {
     "key": "cmd+j",
     "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+alt+1",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.createTerminalEditor",
+        "workbench.action.moveEditorToRightGroup",
+        {
+          "command": "workbench.action.terminal.renameWithArg",
+          "args": {
+            "name": "terminal | run"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ctrl+alt+2",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.createTerminalEditor",
+        "workbench.action.moveEditorToRightGroup",
+        {
+          "command": "workbench.action.terminal.renameWithArg",
+          "args": {
+            "name": "terminal | test"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ctrl+alt+3",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.createTerminalEditor",
+        "workbench.action.moveEditorToRightGroup",
+        {
+          "command": "workbench.action.terminal.renameWithArg",
+          "args": {
+            "name": "terminal | git"
+          }
+        }
+      ]
+    }
   }
 ]
