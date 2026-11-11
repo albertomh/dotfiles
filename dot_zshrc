@@ -109,3 +109,21 @@ case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
+
+
+# LLM
+# ------------------------------------------------------------------------------
+
+## llama.cpp
+
+export LLAMA_SERVER_URL="http://127.0.0.1:8080"
+alias llama-qwen='llama-server \
+  --model "$HOME/.local/share/llama.cpp/models/Qwen3.8-27B-Q4_K_M.gguf" \
+  --ctx-size 4096 \
+  --port 8080'
+
+## pi.dev
+
+# Point Pi agent to local llama.cpp server
+export OPENAI_BASE_URL="http://127.0.0.1:8080/v1"
+export OPENAI_API_KEY="local-no-key-required"
