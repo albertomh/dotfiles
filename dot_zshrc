@@ -109,3 +109,34 @@ case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
+
+
+# LLM
+# ------------------------------------------------------------------------------
+
+## llama.cpp
+
+export LLAMA_BASE_URL=http://127.0.0.1:9931
+
+alias llama-router='llama serve \
+  --no-models-autoload \
+  --models-dir "$HOME/models" \
+  --ctx-size 32768 \
+  --port 9931'
+
+llama-qwen() {
+  llama-server \
+    --model "$HOME/models/Qwen3.8-27B-Q4_K_M.gguf" \
+    --ctx-size 32768 \
+    --chat-template-kwargs '{"reasoning_effort": "medium"}' \
+    --port 9931 "$@"
+}
+
+## pi.dev
+# <https://pi.dev/docs/latest/llama-cpp>
+
+pi-qwen() {
+  pi \
+    --provider llama-cpp \
+    --model qwen
+}
