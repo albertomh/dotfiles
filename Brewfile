@@ -47,6 +47,11 @@ brew "typstyle"
 brew "uv"
 cask "terraform-linters/tap/tflint"
 
+# LLMs
+
+brew "llama.cpp"
+brew "pi-coding-agent"
+
 # apps
 cask "1password"
 cask "betterdisplay"
