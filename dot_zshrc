@@ -124,12 +124,53 @@ alias llama-router='llama serve \
   --ctx-size 32768 \
   --port 9931'
 
+# llama-server configuration:
+#   exec            - Replaces the current shell process with llama-server
+#   --model         - Path to the GGUF model file to load
+#   --host          - IP address the server binds to (localhost only)
+#   --port          - Port number for incoming HTTP requests
+#   --n-gpu-layers  - Number of layers offloaded to the GPU (99 = all layers)
+#   --flash-attn    - Enables Flash Attention to optimize memory and speed
+#   --cache-type-k  - Quantizes the Key cache to 8-bit (q8_0) to save VRAM
+#   --cache-type-v  - Quantizes the Value cache to 8-bit (q8_0) to save VRAM
+#   --ctx-size      - Maximum context window size, in tokens
+#   --parallel      - Number of concurrent request slots (1 = single user)
+#   --batch-size    - Logical batch size for prompt processing (eval)
+#   --ubatch-size   - Physical micro-batch size for GPU execution hardware
+#   --jinja         - Enables Jinja-based chat template rendering
+
 llama-qwen() {
   llama-server \
     --model "$HOME/models/Qwen3.8-27B-Q4_K_M.gguf" \
-    --ctx-size 32768 \
-    --chat-template-kwargs '{"reasoning_effort": "medium"}' \
-    --port 9931 "$@"
+    --host 127.0.0.1 \
+    --port 9931 "$@" \
+    --alias qwen \
+    --n-gpu-layers 99 \
+    --flash-attn on \
+    --cache-type-k q8_0 \
+    --cache-type-v q8_0 \
+    --ctx-size 65536 \
+    --parallel 1 \
+    --batch-size 2048 \
+    --ubatch-size 512 \
+    --jinja
+}
+
+llama-glm() {
+  llama-server \
+    --model "$HOME/models/GLM-4.7-Flash-Q4_K.gguf" \
+    --host 127.0.0.1 \
+    --port 9931 "$@" \
+    --alias glm \
+    --n-gpu-layers 99 \
+    --flash-attn on \
+    --cache-type-k q8_0 \
+    --cache-type-v q8_0 \
+    --ctx-size 65536 \
+    --parallel 1 \
+    --batch-size 2048 \
+    --ubatch-size 512 \
+    --jinja
 }
 
 ## pi.dev
@@ -139,4 +180,10 @@ pi-qwen() {
   pi \
     --provider llama-cpp \
     --model qwen
+}
+
+pi-glm() {
+  pi \
+    --provider llama-cpp \
+    --model glm
 }

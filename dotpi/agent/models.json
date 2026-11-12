@@ -7,7 +7,15 @@
             "models": [
                 {
                     "id": "qwen",
-                    "contextWindow": 32768
+                    "reasoning": true,
+                    "contextWindow": 65536,
+                    "maxTokens": 32768
+                },
+                {
+                    "id": "glm",
+                    "reasoning": true,
+                    "contextWindow": 65536,
+                    "maxTokens": 32768
                 }
             ]
         }
