@@ -1,0 +1,7 @@
+{
+    "lastChangelogVersion": "1.5.2",
+    "hideThinkingBlock": true,
+    "packages": [
+        "git:github.com/lukaspanni/pi-execution-time@eec587204b678f740f44c0cd77d12f156a136bb6"
+    ]
+}
