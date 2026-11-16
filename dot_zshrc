@@ -173,6 +173,23 @@ llama-glm() {
     --jinja
 }
 
+llama-gemma() {
+  llama-server \
+    --model "$HOME/models/gemma-4-26B-A4B-it-Q4_0.gguf" \
+    --host 127.0.0.1 \
+    --port 9931 "$@" \
+    --alias gemma \
+    --n-gpu-layers 99 \
+    --flash-attn on \
+    --cache-type-k q8_0 \
+    --cache-type-v q8_0 \
+    --ctx-size 65536 \
+    --parallel 1 \
+    --batch-size 2048 \
+    --ubatch-size 512 \
+    --jinja
+}
+
 ## pi.dev
 # <https://pi.dev/docs/latest/llama-cpp>
 
@@ -186,4 +203,10 @@ pi-glm() {
   pi \
     --provider llama-cpp \
     --model glm
+}
+
+pi-gemma() {
+  pi \
+    --provider llama-cpp \
+    --model gemma
 }
