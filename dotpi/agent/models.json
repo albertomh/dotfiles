@@ -17,7 +17,27 @@
                     "contextWindow": 65536,
                     "maxTokens": 32768
                 }
-            ]
+            ],
+            "modelOverrides": {
+                "gemma": {
+                    "compat": {
+                        "thinkingTokenBudgetField": "thinking_budget_tokens"
+                    },
+                    "thinkingBudgets": {
+                        "minimal": 512,
+                        "low": 1024,
+                        "medium": 2048,
+                        "high": 4096
+                    },
+                    "samplingParams": {
+                        "temperature": 1.0,
+                        "top_p": 0.95,
+                        "top_k": 64,
+                        "repeat_penalty": 1.08,
+                        "repeat_last_n": 4096
+                    }
+                }
+            }
         }
     }
 }
