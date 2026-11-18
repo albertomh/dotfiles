@@ -175,7 +175,7 @@ llama-glm() {
 
 llama-gemma() {
   llama-server \
-    --model "$HOME/models/gemma-4-26B-A4B-it-Q4_0.gguf" \
+    --model "$HOME/models/gemma-4-26B_q4_0-it.gguf" \
     --host 127.0.0.1 \
     --port 9931 "$@" \
     --alias gemma \
@@ -187,7 +187,13 @@ llama-gemma() {
     --parallel 1 \
     --batch-size 2048 \
     --ubatch-size 512 \
-    --jinja
+    --jinja \
+    --temp 1.0 \
+    --top-p 0.95 \
+    --top-k 64 \
+    --repeat-penalty 1.08 \
+    --repeat-last-n 4096 \
+    --reasoning-budget 4096
 }
 
 ## pi.dev
